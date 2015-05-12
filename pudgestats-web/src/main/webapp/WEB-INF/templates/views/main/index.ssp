@@ -1,0 +1,40 @@
+<% import org.scalatra.Route %>
+<% import info.pudgestats.web.model.Leaderboard %>
+
+<%@ val leaderboard: Leaderboard %>
+<%@ val userShowRoute: Route %>
+
+<% var i: Int = 0 %>
+
+<h1>Top <%= leaderboard.members.size %> Players</h1>
+
+<h3>By <%= leaderboard.scoreType %></h3>
+
+<table>
+  <tbody>
+    #for (member <- leaderboard.members)
+      <tr class="leaderboard-member">
+        <td class="text-center" width="32px">
+          <strong><%= { i = i + 1; i } %></strong>
+        </td>
+        <td class="leaderboard-avatar" width="32px">
+          <a href="<%= url(userShowRoute, "id" -> member.steamUser.id) %>">
+            <img src="<%= member.steamUser.avatar %>" alt="<%= member.steamUser.name %>" />
+          </a>
+        </td>
+        <td class="leaderboard-user">
+          <a href="<%= url(userShowRoute, "id" -> member.steamUser.id) %>">
+            <%= member.steamUser.name %>
+          </a>
+        </td>
+        <td class="leaderboard-score text-right">
+          <%= member.score * 100 %>%
+        </td>
+      </tr>
+    #end
+  </tbody>
+</table>
+
+<div>
+  <small>Last Updated: <%= leaderboard.timestampWithDefaultFormatting %></small>
+</div>

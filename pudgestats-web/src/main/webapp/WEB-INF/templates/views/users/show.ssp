@@ -1,0 +1,99 @@
+<% import org.scalatra.Route %>
+<% import info.pudgestats.web.model.SteamUser %>
+
+<%@ val steamId: String %>
+<%@ val steamUser: Option[SteamUser] %>
+
+<%@ val matchShowRoute: Route %>
+
+#match (steamUser)
+#case (Some(user) if user.pudgeMatches.size > 0)
+  <h1 class="steam-user-header">
+    <img src="<%= user.avatar %>" alt="<%= user.name %>" />
+    <span><%= user.name %></span>
+  </h1>
+
+  <h3>Totals (<%= user.pudgeMatches.size %> Games)</h3>
+
+  <table>
+    <tbody>
+      <tr>
+        <th>Used</th>
+        <th>Illu.</th>
+        <th>Neut.</th>
+        <th>Creep</th>
+        <th>Enemy</th>
+        <th>Ally</th>
+        <th>% Enemy</th>
+      </tr>
+      <tr>
+        <td>
+          <%= user.pudgeMatches.foldLeft(0)(_ + _.numHooksUsed) %>
+        </td>
+        <td>
+          <%= user.pudgeMatches.foldLeft(0)(_ + _.numHooksIllusionsHit) %>
+        </td>
+        <td>
+          <%= user.pudgeMatches.foldLeft(0)(_ + _.numHooksNeutralsHit) %>
+        </td>
+        <td>
+          <%= user.pudgeMatches.foldLeft(0)(_ + _.numHooksCreepsHit) %>
+        </td>
+        <td>
+          <%= user.pudgeMatches.foldLeft(0)(_ + _.numHooksEnemyHeroesHit) %>
+        </td>
+        <td>
+          <%= user.pudgeMatches.foldLeft(0)(_ + _.numHooksAlliedHeroesHit) %>
+        </td>
+        <td>
+          <%= 
+            (user.pudgeMatches.foldLeft(0)(_ + _.numHooksEnemyHeroesHit).toFloat / 
+             user.pudgeMatches.foldLeft(0)(_ + _.numHooksUsed)) * 100
+          %>%
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Matches</h3>
+
+  <ul>
+  #for (mtch <- user.pudgeMatches)
+    <li class="row">
+      <div class="row-left">
+        <a href="<%= url(matchShowRoute, "id" -> String.valueOf(mtch.matchId)) %>">
+          <%= String.valueOf(mtch.matchId) %>
+        </a>
+      </div>
+      <div class="row-right text-right">
+        <%= mtch.timestampWithDefaultFormatting %>
+      </div>
+    </li>
+  #end
+  </ul>
+#case (Some(user))
+  <h1 class="steam-user-header">
+    <img src="<%= user.avatar %>" alt="<%= user.name %>" />
+    <span><%= user.name %></span>
+  </h1>
+
+  <div>
+    <p>
+      <%= user.name %> has no Pudge matches captured! 
+    </p>
+    <p>
+      (This may be due to a private account, or no games with this user were captured!)
+    </p>
+  </div>
+#otherwise
+  <h1><%= steamId %></h1>
+
+  <div>
+    <p>
+      This user has no Pudge matches captured! 
+    </p>
+    <p>
+      (This may be due to a private account, or no games with this user were captured!)
+    </p>
+  </div>
+#end

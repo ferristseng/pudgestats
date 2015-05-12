@@ -1,0 +1,11 @@
+**/target
+*.swp
+*.swo
+**/.DS_Store
+conf/
+*.dem
+/*.txt
+replays/
+*.log
+pudgestats-export
+build/

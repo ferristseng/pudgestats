@@ -1,0 +1,13 @@
+<h1>Parsing</h1>
+
+<h3>How is data being gathered?</h3>
+
+<p>
+  Replays are downloaded directly from Valve to ensure accuracy. Events are extracted from replays (combat log, entity data), and stored on the database. Algorithms then are used to process these events into more relevent information (hooks hit on allies, hooks hit on enemies, etc.). These algorithms are not perfect, so if you find any bugs with inconsistent or incorrect data being reported, please contact me.
+</p>
+
+<h3>Which replays are being downloaded?</h3>
+
+<p>
+  Due to the high volume of Pudge games being played, and the limitations imposed by Valve, only a small subset of games can be downloaded and parsed (currently roughly 500 per day). Currently, only ranked games played on US East are being downloaded. I also am respecting Valve's policy for profile visibility, and only download games where the Pudge player makes their profile openly visible. There is some other logic to toss out abandoned games that are shorter than a certain duration.
+</p>

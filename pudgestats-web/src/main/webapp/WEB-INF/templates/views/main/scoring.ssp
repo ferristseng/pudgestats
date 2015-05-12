@@ -1,0 +1,11 @@
+<h1>Scoring</h1>
+
+<h3>How is my pudge score determined?</h3>
+
+<p>
+  Currently, there is your rank is determined by your hook accuracy against enemy heroes. 
+</p>
+
+<p>
+  In the future, your pudge score will be determined by a combination of stats and events gathered from the replay. This metric will be used as the main ranking mechanism.
+</p>

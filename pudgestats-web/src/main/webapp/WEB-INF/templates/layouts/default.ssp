@@ -1,0 +1,81 @@
+<% import org.scalatra.Route %>
+<% import info.pudgestats.web.model.SteamUserSession %>
+
+<%@ val body: String %>
+<%@ val head: String = "" %>
+
+<%@ val session: Option[SteamUserSession] %>
+
+<%@ val loginRoute: Route %>
+<%@ val logoutRoute: Route %>
+<%@ val userShowRoute: Route %>
+<%@ val matchIndexRoute: Route %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>pudgestats.info</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+      Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-54884315-1', 'auto'); ga('send', 'pageview'); 
+    </script>   
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <%= unescape(head) %>
+  </head>
+  <body>
+    <header>
+      <section id="login">
+        <span>
+          <a href="<%= url(matchIndexRoute) %>">All Matches</a>
+        </span>&nbsp;--&nbsp; 
+        #match (session)
+        #case (Some(sess))
+          <span class="username">
+            <a href="<%= url(userShowRoute, "id" -> sess.id) %>">
+              <%= sess.name %>
+            </a>
+          </span>&nbsp;--&nbsp;  
+          <span>
+            <a href="<%= url(logoutRoute) %>">Logout</a>
+          </span>
+        #case (None)
+          <span class="steampowered-login">
+            <a href="<%= url(loginRoute) %>">
+              <img src="<%= uri("/img/steam_small.png") %>" alt="steampowered" />
+            </a>
+          </span>
+        #end       
+      </section>
+      <section id="pudge">
+        <a href="/">
+          <img src="<%= uri("/img/pudge.png") %>" alt="PUDGE~!!!" />
+        </a>
+      </section>
+    </header>
+    <div class="container">
+      <div class="inner">
+        <%= unescape(body) %>
+      </div>
+    </div>
+    <footer>
+      <section class="trademark">
+        2014 (c) - Dota 2 is a registered trademark of Valve Corporation.
+      </section>
+      <section class="links">
+        <a href="/about">About</a> | 
+        <a href="/scoring">Scoring</a> | 
+        <a href="/parsing">Parsing</a> | 
+        <a href="/bug">Bug Report</a> | 
+        <a href="/rescore">Rescore</a> | 
+        <a href="http://blog.dota2.com/">Dota 2</a> | 
+        <a href="http://www.dotabuff.com/">Dotabuff</a> 
+      </section>
+    </footer>
+  </body>
+</html>

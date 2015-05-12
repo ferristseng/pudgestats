@@ -1,0 +1,917 @@
+{
+  "version": 1.0,
+  "selfRotDamage": 8863,
+  "creepRotDamage": 6946,
+  "neutralRotDamage": 0,
+  "heroRotDamage": 8050,
+  "players": [
+    {
+      "hero": "npc_dota_hero_silencer",
+      "name": "Grimorum",
+      "steamId": 76561198114670879,
+      "gameTeam": 3
+    },
+    {
+      "hero": "npc_dota_hero_centaur",
+      "name": "Pegasus",
+      "steamId": 76561198111118969,
+      "gameTeam": 2
+    },
+    {
+      "hero": "npc_dota_hero_antimage",
+      "name": "KψÐ ÐДŘKN王$$",
+      "steamId": 76561198124125112,
+      "gameTeam": 3
+    },
+    {
+      "hero": "npc_dota_hero_tiny",
+      "name": "TOOTH",
+      "steamId": 76561198124985216,
+      "gameTeam": 2
+    },
+    {
+      "hero": "npc_dota_hero_pudge",
+      "name": "Someone",
+      "steamId": 76561198092426487,
+      "gameTeam": 2
+    },
+    {
+      "hero": "npc_dota_hero_slardar",
+      "name": "cibor punk",
+      "steamId": 76561198093137173,
+      "gameTeam": 3
+    },
+    {
+      "hero": "npc_dota_hero_venomancer",
+      "name": "ANIQUILADOR DE PERRuanos",
+      "steamId": 76561198075386632,
+      "gameTeam": 3
+    },
+    {
+      "hero": "npc_dota_hero_faceless_void",
+      "name": "Nicofury",
+      "steamId": 76561198091390614,
+      "gameTeam": 2
+    },
+    {
+      "hero": "npc_dota_hero_tinker",
+      "name": "Hero_Xn",
+      "steamId": 76561198102101855,
+      "gameTeam": 2
+    },
+    {
+      "hero": "npc_dota_hero_earthshaker",
+      "name": "◯∪ JefryzhitOp   ♡",
+      "steamId": 76561198127607947,
+      "gameTeam": 3
+    }
+  ],
+  "hookEvents": [
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 546.8214
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 568.31616
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 2053.3062
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 818.02185
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "hit": true,
+      "illusion": false,
+      "timestamp": 1017.0066
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 2087.6565
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 2192.4468
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 1449.7343
+    },
+    {
+      "target": "npc_dota_hero_earthshaker",
+      "hit": true,
+      "illusion": false,
+      "timestamp": 1573.7706
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 1003.5099
+    },
+    {
+      "target": "npc_dota_hero_antimage",
+      "hit": true,
+      "illusion": false,
+      "timestamp": 1838.9725
+    },
+    {
+      "target": "npc_dota_hero_centaur",
+      "hit": true,
+      "illusion": false,
+      "timestamp": 1450.0675
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "hit": true,
+      "illusion": false,
+      "timestamp": 2022.6277
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "hit": true,
+      "illusion": false,
+      "timestamp": 2192.8816
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 2035.4246
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 1320.9657
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 1838.306
+    },
+    {
+      "target": "npc_dota_hero_earthshaker",
+      "hit": true,
+      "illusion": false,
+      "timestamp": 2035.9244
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 915.63135
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 681.78845
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 1100.4862
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 784.4967
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 1741.4297
+    },
+    {
+      "target": "npc_dota_creep_badguys_ranged",
+      "hit": true,
+      "illusion": false,
+      "timestamp": 682.2883
+    },
+    {
+      "target": "npc_dota_hero_venomancer",
+      "hit": true,
+      "illusion": false,
+      "timestamp": 568.916
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 1016.97327
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 1573.404
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "hit": true,
+      "illusion": false,
+      "timestamp": 1742.0295
+    },
+    {
+      "target": "npc_dota_hero_silencer",
+      "hit": true,
+      "illusion": false,
+      "timestamp": 2088.1248
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 1488.3915
+    },
+    {
+      "target": "npc_dota_hero_venomancer",
+      "hit": true,
+      "illusion": false,
+      "timestamp": 1414.4762
+    },
+    {
+      "target": "npc_dota_hero_venomancer",
+      "hit": true,
+      "illusion": false,
+      "timestamp": 655.3616
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 1413.7764
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 438.3812
+    },
+    {
+      "target": "npc_dota_hero_venomancer",
+      "hit": true,
+      "illusion": false,
+      "timestamp": 438.68112
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 1342.727
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 2022.0612
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 2275.2288
+    },
+    {
+      "target": "npc_dota_hero_silencer",
+      "hit": true,
+      "illusion": false,
+      "timestamp": 1100.8528
+    },
+    {
+      "target": "dota_unknown",
+      "hit": false,
+      "illusion": false,
+      "timestamp": 654.92834
+    },
+    {
+      "target": "npc_dota_creep_badguys_melee",
+      "hit": true,
+      "illusion": false,
+      "timestamp": 547.25464
+    }
+  ],
+  "killEvents": [
+    {
+      "target": "npc_dota_hero_venomancer",
+      "timestamp": 359.46713
+    },
+    {
+      "target": "npc_dota_hero_venomancer",
+      "timestamp": 701.5836
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "timestamp": 721.2455
+    },
+    {
+      "target": "npc_dota_hero_silencer",
+      "timestamp": 1101.5193
+    },
+    {
+      "target": "npc_dota_hero_antimage",
+      "timestamp": 1169.3027
+    },
+    {
+      "target": "npc_dota_hero_antimage",
+      "timestamp": 1342.7937
+    },
+    {
+      "target": "npc_dota_hero_venomancer",
+      "timestamp": 1417.5754
+    },
+    {
+      "target": "npc_dota_hero_earthshaker",
+      "timestamp": 1581.3688
+    },
+    {
+      "target": "npc_dota_hero_venomancer",
+      "timestamp": 1851.5695
+    },
+    {
+      "target": "npc_dota_hero_earthshaker",
+      "timestamp": 2037.7573
+    },
+    {
+      "target": "npc_dota_hero_silencer",
+      "timestamp": 2282.5537
+    }
+  ],
+  "dismEvents": [
+    {
+      "target": "npc_dota_hero_slardar",
+      "illusion": false,
+      "damage": 64,
+      "timestamp": 719.4126
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "illusion": false,
+      "damage": -1,
+      "timestamp": 719.4126
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "illusion": false,
+      "damage": 64,
+      "timestamp": 720.4457
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "illusion": false,
+      "damage": 56,
+      "timestamp": 1005.776
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "illusion": false,
+      "damage": -1,
+      "timestamp": 1005.776
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "illusion": false,
+      "damage": 56,
+      "timestamp": 1006.8091
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "illusion": false,
+      "damage": 56,
+      "timestamp": 1007.80884
+    },
+    {
+      "target": "npc_dota_hero_silencer",
+      "illusion": false,
+      "damage": 56,
+      "timestamp": 1095.7207
+    },
+    {
+      "target": "npc_dota_hero_silencer",
+      "illusion": false,
+      "damage": -1,
+      "timestamp": 1095.7207
+    },
+    {
+      "target": "npc_dota_hero_silencer",
+      "illusion": false,
+      "damage": 56,
+      "timestamp": 1096.7538
+    },
+    {
+      "target": "npc_dota_hero_silencer",
+      "illusion": false,
+      "damage": 56,
+      "timestamp": 1097.7535
+    },
+    {
+      "target": "npc_dota_hero_antimage",
+      "illusion": false,
+      "damage": 41,
+      "timestamp": 1168.8695
+    },
+    {
+      "target": "npc_dota_hero_antimage",
+      "illusion": false,
+      "damage": -1,
+      "timestamp": 1168.8695
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "illusion": false,
+      "damage": 107,
+      "timestamp": 1230.6877
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "illusion": false,
+      "damage": -1,
+      "timestamp": 1230.6877
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "illusion": false,
+      "damage": 107,
+      "timestamp": 1231.7208
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "illusion": false,
+      "damage": 107,
+      "timestamp": 1232.7206
+    },
+    {
+      "target": "npc_dota_hero_antimage",
+      "illusion": false,
+      "damage": 69,
+      "timestamp": 1340.6276
+    },
+    {
+      "target": "npc_dota_hero_antimage",
+      "illusion": false,
+      "damage": -1,
+      "timestamp": 1340.6276
+    },
+    {
+      "target": "npc_dota_hero_antimage",
+      "illusion": false,
+      "damage": 69,
+      "timestamp": 1341.6606
+    },
+    {
+      "target": "npc_dota_hero_venomancer",
+      "illusion": false,
+      "damage": 93,
+      "timestamp": 1416.5424
+    },
+    {
+      "target": "npc_dota_hero_venomancer",
+      "illusion": false,
+      "damage": -1,
+      "timestamp": 1416.5424
+    },
+    {
+      "target": "npc_dota_hero_venomancer",
+      "illusion": false,
+      "damage": 93,
+      "timestamp": 1417.5754
+    },
+    {
+      "target": "npc_dota_hero_earthshaker",
+      "illusion": false,
+      "damage": 93,
+      "timestamp": 1575.2703
+    },
+    {
+      "target": "npc_dota_hero_earthshaker",
+      "illusion": false,
+      "damage": -1,
+      "timestamp": 1575.2703
+    },
+    {
+      "target": "npc_dota_hero_earthshaker",
+      "illusion": false,
+      "damage": 93,
+      "timestamp": 1576.3033
+    },
+    {
+      "target": "npc_dota_hero_earthshaker",
+      "illusion": false,
+      "damage": 93,
+      "timestamp": 1577.3031
+    },
+    {
+      "target": "npc_dota_hero_venomancer",
+      "illusion": false,
+      "damage": 93,
+      "timestamp": 1663.4487
+    },
+    {
+      "target": "npc_dota_hero_venomancer",
+      "illusion": false,
+      "damage": -1,
+      "timestamp": 1663.4487
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "illusion": false,
+      "damage": 93,
+      "timestamp": 1743.5958
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "illusion": false,
+      "damage": -1,
+      "timestamp": 1743.5958
+    },
+    {
+      "target": "npc_dota_hero_antimage",
+      "illusion": false,
+      "damage": 54,
+      "timestamp": 1840.6055
+    },
+    {
+      "target": "npc_dota_hero_antimage",
+      "illusion": false,
+      "damage": -1,
+      "timestamp": 1840.6055
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "illusion": false,
+      "damage": 93,
+      "timestamp": 2024.3606
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "illusion": false,
+      "damage": -1,
+      "timestamp": 2024.3606
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "illusion": false,
+      "damage": 93,
+      "timestamp": 2025.3937
+    },
+    {
+      "target": "npc_dota_hero_slardar",
+      "illusion": false,
+      "damage": 93,
+      "timestamp": 2026.3934
+    },
+    {
+      "target": "npc_dota_hero_silencer",
+      "illusion": false,
+      "damage": 131,
+      "timestamp": 2089.7302
+    },
+    {
+      "target": "npc_dota_hero_silencer",
+      "illusion": false,
+      "damage": -1,
+      "timestamp": 2089.7302
+    },
+    {
+      "target": "npc_dota_hero_silencer",
+      "illusion": false,
+      "damage": 131,
+      "timestamp": 2090.767
+    },
+    {
+      "target": "npc_dota_hero_silencer",
+      "illusion": false,
+      "damage": 131,
+      "timestamp": 2091.7705
+    },
+    {
+      "target": "npc_dota_hero_silencer",
+      "illusion": false,
+      "damage": 131,
+      "timestamp": 2280.8145
+    },
+    {
+      "target": "npc_dota_hero_silencer",
+      "illusion": false,
+      "damage": -1,
+      "timestamp": 2280.8145
+    },
+    {
+      "target": "npc_dota_hero_silencer",
+      "illusion": false,
+      "damage": 131,
+      "timestamp": 2281.8513
+    }
+  ],
+  "itemEvents": [
+    {
+      "name": "item_tpscroll",
+      "timestamp": 1731.832
+    },
+    {
+      "name": "item_boots",
+      "timestamp": 649.89624
+    },
+    {
+      "name": "item_tango",
+      "timestamp": 177.67566
+    },
+    {
+      "name": "item_tango_single",
+      "timestamp": 411.22116
+    },
+    {
+      "name": "item_force_staff",
+      "timestamp": 1639.9878
+    },
+    {
+      "name": "item_tpscroll",
+      "timestamp": 1643.2537
+    },
+    {
+      "name": "item_soul_ring",
+      "timestamp": 866.9099
+    },
+    {
+      "name": "item_gauntlets",
+      "timestamp": 177.67566
+    },
+    {
+      "name": "item_tpscroll",
+      "timestamp": 614.83813
+    },
+    {
+      "name": "item_tpscroll",
+      "timestamp": 1052.4646
+    },
+    {
+      "name": "item_tpscroll",
+      "timestamp": 472.27292
+    },
+    {
+      "name": "item_tpscroll",
+      "timestamp": 1285.8076
+    },
+    {
+      "name": "item_branches",
+      "timestamp": 177.67566
+    },
+    {
+      "name": "item_branches",
+      "timestamp": 177.67566
+    },
+    {
+      "name": "item_recipe_soul_ring",
+      "timestamp": 856.51245
+    },
+    {
+      "name": "item_smoke_of_deceit",
+      "timestamp": 1060.4626
+    },
+    {
+      "name": "item_tpscroll",
+      "timestamp": 757.27
+    },
+    {
+      "name": "item_gauntlets",
+      "timestamp": 172.94131
+    },
+    {
+      "name": "item_ring_of_regen",
+      "timestamp": 857.1123
+    },
+    {
+      "name": "item_ring_of_regen",
+      "timestamp": 1639.6545
+    },
+    {
+      "name": "item_staff_of_wizardry",
+      "timestamp": 1398.9133
+    },
+    {
+      "name": "item_branches",
+      "timestamp": 177.67566
+    },
+    {
+      "name": "item_urn_of_shadows",
+      "timestamp": 468.6738
+    },
+    {
+      "name": "item_tango_single",
+      "timestamp": 415.4868
+    }
+  ],
+  "abilityEvents": [
+    {
+      "name": "attribute_bonus",
+      "level": 2,
+      "timestamp": 2107.0225
+    },
+    {
+      "name": "attribute_bonus",
+      "level": 1,
+      "timestamp": 1863.3333
+    },
+    {
+      "name": "pudge_meat_hook",
+      "level": 4,
+      "timestamp": 707.5488
+    },
+    {
+      "name": "pudge_meat_hook",
+      "level": 1,
+      "timestamp": 370.09787
+    },
+    {
+      "name": "pudge_flesh_heap",
+      "level": 3,
+      "timestamp": 1447.5015
+    },
+    {
+      "name": "attribute_bonus",
+      "level": 0,
+      "timestamp": 165.5064
+    },
+    {
+      "name": "pudge_flesh_heap",
+      "level": 4,
+      "timestamp": 1588.7336
+    },
+    {
+      "name": "pudge_rot",
+      "level": 2,
+      "timestamp": 454.2773
+    },
+    {
+      "name": "pudge_dismember",
+      "level": 2,
+      "timestamp": 1174.6348
+    },
+    {
+      "name": "pudge_rot",
+      "level": 3,
+      "timestamp": 725.0112
+    },
+    {
+      "name": "pudge_meat_hook",
+      "level": 3,
+      "timestamp": 539.32324
+    },
+    {
+      "name": "pudge_dismember",
+      "level": 3,
+      "timestamp": 2032.6919
+    },
+    {
+      "name": "pudge_rot",
+      "level": 1,
+      "timestamp": 171.10759
+    },
+    {
+      "name": "pudge_flesh_heap",
+      "level": 2,
+      "timestamp": 1433.3049
+    },
+    {
+      "name": "pudge_dismember",
+      "level": 1,
+      "timestamp": 686.7539
+    },
+    {
+      "name": "pudge_rot",
+      "level": 4,
+      "timestamp": 1077.3918
+    },
+    {
+      "name": "pudge_flesh_heap",
+      "level": 1,
+      "timestamp": 1106.3181
+    },
+    {
+      "name": "pudge_flesh_heap",
+      "level": 0,
+      "timestamp": 165.5064
+    },
+    {
+      "name": "pudge_meat_hook",
+      "level": 2,
+      "timestamp": 371.89743
+    },
+    {
+      "name": "pudge_meat_hook",
+      "level": 0,
+      "timestamp": 165.5064
+    },
+    {
+      "name": "pudge_rot",
+      "level": 0,
+      "timestamp": 165.5064
+    },
+    {
+      "name": "pudge_dismember",
+      "level": 0,
+      "timestamp": 165.5064
+    }
+  ],
+  "deathEvents": [
+    {
+      "attacker": "npc_dota_hero_slardar",
+      "illusion": false,
+      "timestamp": 1750.0942
+    },
+    {
+      "attacker": "npc_dota_hero_slardar",
+      "illusion": false,
+      "timestamp": 594.74304
+    },
+    {
+      "attacker": "npc_dota_hero_venomancer",
+      "illusion": false,
+      "timestamp": 1857.1681
+    },
+    {
+      "attacker": "npc_dota_hero_slardar",
+      "illusion": false,
+      "timestamp": 1959.8097
+    },
+    {
+      "attacker": "npc_dota_hero_slardar",
+      "illusion": false,
+      "timestamp": 448.41208
+    },
+    {
+      "attacker": "npc_dota_hero_earthshaker",
+      "illusion": false,
+      "timestamp": 822.65405
+    },
+    {
+      "attacker": "npc_dota_hero_earthshaker",
+      "illusion": false,
+      "timestamp": 1665.8815
+    },
+    {
+      "attacker": "npc_dota_hero_slardar",
+      "illusion": false,
+      "timestamp": 2205.8257
+    },
+    {
+      "attacker": "npc_dota_hero_pudge",
+      "illusion": false,
+      "timestamp": 722.1786
+    },
+    {
+      "attacker": "npc_dota_hero_silencer",
+      "illusion": false,
+      "timestamp": 1583.8348
+    },
+    {
+      "attacker": "npc_dota_hero_earthshaker",
+      "illusion": false,
+      "timestamp": 1350.4918
+    },
+    {
+      "attacker": "npc_dota_hero_slardar",
+      "illusion": false,
+      "timestamp": 1239.319
+    },
+    {
+      "attacker": "npc_dota_badguys_tower2_top",
+      "illusion": false,
+      "timestamp": 933.2604
+    },
+    {
+      "attacker": "npc_dota_hero_slardar",
+      "illusion": false,
+      "timestamp": 1017.33984
+    }
+  ],
+  "runeEvents": [
+    {
+      "rune": "modifier_rune_doubledamage",
+      "timestamp": 710.6814
+    }
+  ]
+}

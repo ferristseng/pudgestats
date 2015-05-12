@@ -1,0 +1,41 @@
+<% import org.scalatra.Route %>
+<% import scala.collection.Iterable %>
+
+<% import info.pudgestats.web.model.Match %>
+
+<%@ val pageTotal: Int %>
+<%@ val pageCurrent: Int %>
+
+<%@ val matches: Iterable[Match] %>
+
+<%@ val matchShowRoute: Route %>
+<%@ val matchIndexRoute: Route %>
+
+<h1>Recent Matches</h1>
+
+<ul>
+#for (mtch <- matches)
+  <li class="row">
+    <div class="row-left">
+      <a href="<%= url(matchShowRoute, "id" -> String.valueOf(mtch.matchId)) %>">
+        <%= String.valueOf(mtch.matchId) %>
+      </a>
+    </div>
+    <div class="row-right text-right">
+      <%= mtch.timestampWithDefaultFormatting %>
+    </div>
+  </li>
+#end
+ </ul>
+
+<div class="pagination">
+#for (page <- 0 to pageTotal)
+  <span class="page">
+    <a href="<%= url(matchIndexRoute, "page" -> (page + 1).toString) %>"
+       class="<%= if (pageCurrent == page) "page-current" %>"><%= page + 1 %></a>
+  </span>
+  #if (page != pageTotal)
+   | 
+  #end
+#end  
+</div>

@@ -1,0 +1,12 @@
+<%@ val errorCode: Int %>
+<%@ val errorDesc: Option[String] %>
+
+<h1><%= errorCode %> Error</h1>
+
+#match (errorDesc)
+#case (Some(errorDesc))
+<pre>
+  <%= errorDesc %>
+</pre>
+#case (None)
+#end

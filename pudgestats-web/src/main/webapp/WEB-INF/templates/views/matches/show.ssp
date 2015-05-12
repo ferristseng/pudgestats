@@ -1,0 +1,295 @@
+#set (head)
+<script src="/js/match.js"></script>
+#end
+
+<% import info.pudgestats.core.Const %>
+<% import info.pudgestats.web.model._ %>
+<% import info.pudgestats.web.util.ImageHelper %>
+<% import info.pudgestats.core.replay.ReplayEvent %>
+
+<%@ val mtch: Match %>
+
+<%@ val teamsMap: Map[Int, Iterable[Player]] = 
+      mtch.players.groupBy(_.gameTeam) %>
+
+<%@ val teams: Iterable[(Player, Player)] = 
+      teamsMap.get(2).get.zip(teamsMap.get(3).get) %>
+
+<div class="row">
+  <div class="row-left">
+    <h1>Match: <%= String.valueOf(mtch.matchId) %></h1>
+  </div>
+  <div class="row-right text-right">
+    <%= mtch.timestampWithDefaultFormatting %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="row-left">
+    <h3>Players</h3>
+  </div>
+  <div class="row-right text-right">
+    <a href="http://dotabuff.com/matches/<%= String.valueOf(mtch.matchId) %>">
+      Dotabuff 
+    </a>
+  </div>
+</div>
+
+<table id="match-players">
+  <tbody>
+    <tr>
+      <th width="72px">Radiant</th>
+      <th></th>
+      <th></th>
+      <th width="72px" class="text-right">Dire</th>
+    </tr>
+    #for (pair <- teams)
+      <tr>
+        <td class="img-wrap <%= if (pair._1.isPudge) "highlighted" %>">
+          <img 
+            width="72px" 
+            src="<%= uri(s"/img/heroes/${ImageHelper.heroImageNameFromString(pair._1.hero)}") %>"
+            alt="<%= pair._1.heroCompiled %>" 
+          />
+        </td>
+        <td class="text-left <%= if (pair._1.isPudge) "highlighted"%> ">
+          <%= pair._1.name %>
+        </td>
+        <td class="text-right <%= if (pair._2.isPudge) "highlighted" %>">
+          <%= pair._2.name %>
+        </td>
+        <td class="img-wrap <%= if (pair._2.isPudge) "highlighted" %>">
+          <img 
+            width="72px" 
+            src="<%= uri(s"/img/heroes/${ImageHelper.heroImageNameFromString(pair._2.hero)}") %>"
+            alt="<%= pair._2.heroCompiled %>" 
+          />
+        </td>
+      </tr>
+    #end
+  </tbody>
+</table>
+
+<h3>Hooks</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <th>Used</th>
+      <th>Illu.</th>
+      <th>Neut.</th>
+      <th>Creep</th>
+      <th>Enemy</th>
+      <th>Ally</th>
+      <th>% Enemy</th>
+    </tr>
+    <tr>
+      <td><%= mtch.numHooksUsed %></td>
+      <td><%= mtch.numHooksIllusionsHit %></td>
+      <td><%= mtch.numHooksNeutralsHit %></td>
+      <td><%= mtch.numHooksCreepsHit %></td>
+      <td><%= mtch.numHooksEnemyHeroesHit %></td>
+      <td><%= mtch.numHooksAlliedHeroesHit %></td>
+      <td>
+        <%= if (mtch.numHooksUsed > 0) { 
+              (mtch.numHooksEnemyHeroesHit.toFloat / mtch.numHooksUsed) * 100 
+            } else { 0f } %>%
+      </td>
+    </tr>
+</table>
+
+<h3>Rot</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <th>Dmg. Hero</th>
+      <th>Dmg. Self</th>
+      <th>Dmg. Creep</th>
+      <th>Dmg. Neut.</th>
+      <th>Dmg. Enemy</th>
+    </tr>
+    <tr>
+      <td><%= mtch.heroRotDamage %></td>
+      <td><%= mtch.selfRotDamage %></td>
+      <td><%= mtch.creepRotDamage %></td>
+      <td><%= mtch.neutralRotDamage %></td>
+      <td><%= mtch.enemyRotDamage %></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="row">
+  <div class="row-left">
+    <h3>Timeline</h3>
+  </div>
+  <div class="row-right text-right">
+    <label>
+      Filter: 
+    </label>
+    <select id="timeline-selector">
+      <option value="0" selected>None</option>
+      <option value="1">Kills</option>
+      <option value="2">Purchases</option>
+      <option value="3">Level Up</option>
+      <option value="4">Dismember</option>
+      <option value="5">Runes</option>
+      <option value="6">All Hooks</option>
+      <option value="7">Hit Hooks</option>
+      <option value="8">Missed Hooks</option>
+      <option value="9">Deaths</option>
+      <option value="10">Denies</option>
+    </select>
+  </div>
+</div>
+
+<ul id="timeline">
+#for (timelineEvt <- mtch.timeline)
+  #match (timelineEvt)
+  #case (evt: HookEvent if evt.hit)
+  <li class="6 7">
+    <%= evt.timestampString %>:
+    Pudge hit <strong><%= evt.targetCompiled %></strong> with Hook!.
+  </li>
+  #case (evt: HookEvent)
+  <li class="6 8">
+    <%= evt.timestampString %>:
+    Pudge used hook... but missed!
+  </li>
+  #case (evt: KillEvent)
+  <li class="1">
+    <%= evt.timestampString %>:
+    Pudge killed <strong><%= evt.targetCompiled %></strong>
+  </li>
+  #case (evt: PlayerItemEvent)
+  <li class="2">
+    <%= evt.timestampString %>:
+    Pudge purchased <strong><%= evt.itemCompiled %></strong> 
+  </li>
+  #case (evt: PlayerAbilityEvent)
+  <li class="3">
+    <%= evt.timestampString %>:
+    Pudge leveled <strong><%= evt.abilityCompiled %></strong> (<%= evt.level %>) 
+  </li>
+  #case (evt: DeathEvent if evt.attacker == Const.PudgeNPCString)
+  <li class="10">
+    <%= evt.timestampString %>:
+    <strong>DENIED!</strong>
+  </li>
+  #case (evt: DeathEvent)
+  <li class="9">
+    <%= evt.timestampString %>: 
+    Pudge was killed by <strong><%= evt.attackerCompiled %></strong>!
+  </li>
+  #case (evt: RuneEvent)
+  <li class="5">
+    <%= evt.timestampString %>:
+    Pudge used a <strong><%= evt.runeCompiled %></strong> rune.
+  </li>
+  #case (evt: DismemberEvent)
+  <li class="4">
+    <%= evt.timestampString %>:
+    Pudge dismembered <strong><%= evt.targetCompiled %></strong> for <%= evt.damage %> damage.
+  </li>
+  #end
+#end
+</ul>
+
+<section id="parser-log">
+<h3>Parser Log</h3>
+
+<p>
+  <small>
+    Parser: V<%= mtch.parser.head.versionNum %> -- <%= mtch.parser.head.versionName %>
+  </small>
+</p>
+
+<p>
+These are the raw events captured by the parser. The parser log can be consulted if you believe 
+there is an inaccuracy with the data being presented above. If there is, please report it 
+as a bug.
+</p>
+
+<h3>Hook Events (Raw)</h3>
+<ul>
+#for (hookEvt <- mtch.hookEventsSorted)
+  <li>
+    <%= hookEvt.timestampString %>: 
+    #if (hookEvt.hit)
+      Pudge hit a hook on <%= hookEvt.target %> <%= if (hookEvt.illusion) "(Illusion)" %> 
+    #else
+      Pudge used hook -- but it missed!
+    #end
+  </li>
+#end
+</ul>
+
+<h3>Kill Events</h3>
+<ul>
+#for (killEvt <- mtch.killEventsSorted)
+  <li>
+    <%= killEvt.timestampString %>:
+    Pudge killed <%= killEvt.target %>
+  </li>
+#end
+</ul>
+
+<h3>Death Events</h3>
+<ul>
+#for (deathEvt <- mtch.deathEventsSorted)
+  <li>
+    <%= deathEvt.timestampString %>:
+    Pudge killed by <%= deathEvt.attacker %>
+  </li>
+#end
+</ul>
+
+<h3>Dismember Events</h3>
+<ul>
+#for (dismemberEvt <- mtch.dismemberEventsSorted)
+  <li>
+    <%= dismemberEvt.timestampString %>:
+    Pudge dismembered <%= dismemberEvt.target %> for <%= dismemberEvt.damage %> 
+  </li>
+#end
+</ul>
+
+<h3>Item Purchase Events</h3>
+<ul>
+#for (itemEvt <- mtch.itemEventsSorted)
+  <li>
+    <%= itemEvt.timestampString %>:
+    Pudge purchased <%= itemEvt.name %>
+  </li>
+#end
+</ul>
+
+<h3>Ability Events</h3>
+<ul>
+#for (abilityEvt <- mtch.abilityEventsSorted)
+  <li>
+    <%= abilityEvt.timestampString %>:
+    Pudge skilled <%= abilityEvt.name %> (<%= abilityEvt.level %>)
+  </li>
+#end
+</ul>
+
+<h3>Rune Events</h3>
+<ul>
+#for (runeEvt <- mtch.runeEventsSorted)
+  <li>
+    <%= runeEvt.timestampString %>: 
+    Pudge used <%= runeEvt.rune %>
+  </li>
+#end
+</ul>
+</section>
+
+<div class="row">
+  <div class="row-left">
+    <a href="javascript:void(0)" id="parser-log-toggle">Show Parser Log</a>
+  </div>
+  <div class="row-right text-right">
+    <%= mtch.updatedWithDefaultFormatting %>
+  </div>
+</div>
